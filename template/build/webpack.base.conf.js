@@ -13,7 +13,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue'],
+    extensions: ['', '.js', '.jsx'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
@@ -28,13 +28,7 @@ module.exports = {
     {{#lint}}
     preLoaders: [
       {
-        test: /\.vue$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/
-      },
-      {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'eslint',
         include: projectRoot,
         exclude: /node_modules/
@@ -43,11 +37,7 @@ module.exports = {
     {{/lint}}
     loaders: [
       {
-        test: /\.vue$/,
-        loader: 'vue'
-      },
-      {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel',
         include: projectRoot,
         exclude: /node_modules/
@@ -55,10 +45,6 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'json'
-      },
-      {
-        test: /\.html$/,
-        loader: 'vue-html'
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -81,9 +67,6 @@ module.exports = {
   {{#lint}}
   eslint: {
     formatter: require('eslint-friendly-formatter')
-  },
-  {{/lint}}
-  vue: {
-    loaders: utils.cssLoaders()
   }
+  {{/lint}}
 }

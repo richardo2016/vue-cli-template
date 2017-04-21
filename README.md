@@ -12,7 +12,7 @@ This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It
 
 ``` bash
 $ npm install -g vue-cli
-$ vue init webpack#1.0 my-project
+$ vue init richardo2016/vue-cli-template#react@14-webpack@1 my-project
 $ cd my-project
 $ npm install
 $ npm run dev
@@ -21,7 +21,7 @@ $ npm run dev
 ## What's Included
 
 - `npm run dev`: first-in-class development experience.
-  - Webpack + `vue-loader` for single file Vue components.
+  - Webpack for single file Vue components.
   - State preserving hot-reload
   - State preserving compilation error overlay
   - Lint-on-save with ESLint

@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "message": "Project description",
-      "default": "A Vue.js project"
+      "default": "A React project"
     },
     "author": {
       "type": "string",
@@ -41,6 +41,37 @@
         }
       ]
     },
+    "router": {
+      "type": "confirm",
+      "message": "Use react-router to manage your App's routes?"
+    },
+    "routerConfig": {
+      "when": "router",
+      "type": "list",
+      "message": "Pick an router plugin for react",
+      "choices": [
+        {
+          "name": "react-router 1.x (https://github.com/ReactTraining/react-router/blob/1.0.x/docs)",
+          "value": "1.0",
+          "short": "1.0"
+        },
+        {
+          "name": "react-router 2.x (https://github.com/ReactTraining/react-router/tree/v2.8.1/docs)",
+          "value": "2.0",
+          "short": "2.0"
+        },
+        {
+          "name": "latest (https://github.com/ReactTraining/react-router)",
+          "value": "latest",
+          "short": "latest"
+        },
+        {
+          "name": "none (configure it yourself)",
+          "value": "none",
+          "short": "none"
+        }
+      ]
+    },
     "unit": {
       "type": "confirm",
       "message": "Setup unit tests with Karma + Mocha?"
@@ -48,12 +79,21 @@
     "e2e": {
       "type": "confirm",
       "message": "Setup e2e tests with Nightwatch?"
+    },
+    "redux": {
+      "type": "confirm",
+      "message": "Use redux to manage your Global State?"
+    },
+    "react-tap": {
+      "type": "confirm",
+      "message": "Handle Tap Event for your React App?"
     }
+
   },
   "filters": {
     ".eslintrc.js": "lint",
     "test/unit/**/*": "unit",
     "test/e2e/**/*": "e2e"
   },
-  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
+  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\n"
 }
